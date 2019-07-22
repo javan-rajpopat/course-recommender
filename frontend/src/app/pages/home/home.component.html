@@ -1,0 +1,118 @@
+<div fxLayoutAlign="center center" fxLayout="column">
+    <h1>Course Selector</h1>
+
+
+    <div class="home__prediction"
+         fxLayoutAlign="center center"
+         fxLayout="column">
+
+        <md-card fxLayoutAlign="center center" fxLayout="column">
+            <h4>Enter your undergrad courses</h4>
+            <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 1"
+                           placeholder="Course 1"
+                           [(ngModel)]="iris.course1">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 2"
+                           placeholder="Course 2"
+                           [(ngModel)]="iris.course2">
+                </md-input-container>
+            </div>
+               <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 3"
+                           placeholder="Course 3"
+                           [(ngModel)]="iris.course3">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 4"
+                           placeholder="Course 4"
+                           [(ngModel)]="iris.course4">
+                </md-input-container>
+            </div>
+               <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 5"
+                           placeholder="Course 5"
+                           [(ngModel)]="iris.course5">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 6"
+                           placeholder="Course 6"
+                           [(ngModel)]="iris.course6">
+                </md-input-container>
+            </div>
+               <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 7"
+                           placeholder="Course 7"
+                           [(ngModel)]="iris.course7">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 8"
+                           placeholder="Course 8"
+                           [(ngModel)]="iris.course8">
+                </md-input-container>
+            </div>
+               <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 9"
+                           placeholder="Course 9"
+                           [(ngModel)]="iris.course9">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 10"
+                           placeholder="Course 10"
+                           [(ngModel)]="iris.course10">
+                </md-input-container>
+            </div>
+            <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Course 11"
+                           placeholder="Course 11"
+                           [(ngModel)]="iris.course11">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Course 12"
+                           placeholder="Course 12"
+                           [(ngModel)]="iris.course12">
+                </md-input-container>
+            </div>
+            <div>
+                <button md-raised-button (click)="predictIris()">Predict Graduate Courses</button>
+            </div>
+        </md-card>
+
+        <div *ngIf="probabilityPredictions"
+             fxLayoutAlign="center center"
+             fxLayout="column"
+             class="home__chart-container">
+            <h4>Prediction Result</h4>
+            <!-- <ngx-charts-pie-chart
+                [results]="probabilityPredictions"
+                [scheme]="colorScheme"
+                [labels]="true"
+                [legend]="true">
+            </ngx-charts-pie-chart> -->
+            <ul>
+                <li *ngFor="let i of probabilityPredictions">
+                    <span> {{i.value}} </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
